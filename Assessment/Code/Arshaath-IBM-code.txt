@@ -34,8 +34,8 @@ void setup()
   pinMode(8,OUTPUT);     	//signal to piezo buzzer
   pinMode(9, INPUT);		//signal to PIR	
   pinMode(10, OUTPUT);		//signal to npn as switch
-  pinMode(4, OUTPUT);		//Red LED
-  pinMode(3, OUTPUT);		//Green LED
+  pinMode(4, OUTPUT);		//bulb
+  pinMode(3, OUTPUT);		//blub
  
 }
 
@@ -65,8 +65,8 @@ void loop()
   if (sen2Value == 0) 
   	{
     	digitalWrite(10, LOW); //npn as switch OFF
-    	digitalWrite(4, HIGH); // Red LED ON,indicating no motion
-    	digitalWrite(3, LOW); //Green LED OFF, since no Motion detected
+    	digitalWrite(4, HIGH); // bulb ON,indicating no motion
+    	digitalWrite(3, LOW); // bulb OFF, since no Motion detected
     Serial.print("     || NO Motion Detected    " );
   	}
  
@@ -74,8 +74,8 @@ void loop()
   	{
     	digitalWrite(10, HIGH);//npn as switch ON
     delay(3000);
-    	digitalWrite(4, LOW); // RED LED OFF 
-    	digitalWrite(3, HIGH);//GREEN LED ON , indicating motion detected
+    	digitalWrite(4, LOW); // bulb OFF 
+    	digitalWrite(3, HIGH);// bulb ON , indicating motion detected
      Serial.print(" 	   || Motion Detected!      " );
   	}
   delay(300);
